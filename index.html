@@ -13,6 +13,19 @@
         for (var i = 0; i < as.length; i++)
             as[i].style.textDecoration = setting;
     }
+    function popup(_src) {
+        //alert(_src);
+        var el = document.getElementById("popup");
+        el.innerHTML = "<img src=\"" + _src + "\">";
+        el.style.display = "block";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        var modal = document.getElementById("popup");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>
 </head>
 <body>
@@ -66,16 +79,18 @@
     </ul>
 
     <div class="side-by-side">
-        <a href="../img/waterfall.jpg"><img title="Maryland waterfall. Click to view larger." alt="Maryland waterfall. Click to view larger." src="../img/waterfall.jpg"></a>
-        <a href="../img/seafood.jpg"><img title="Maryland seafood. Click to view larger." alt="Maryland seafood. Click to view larger." src="../img/seafood.jpg"></a>
-        <a href="../img/rut-700x467.jpg"><img title="Maryland restaurant. Click to view larger." alt="Maryland restaurant. Click to view larger." src="../img/rut-700x467.jpg"></a>
+        <img title="Maryland waterfall. Click to view larger." alt="Maryland waterfall. Click to view larger." src="../img/waterfall.jpg" onclick="popup(this.src)">
+        <img title="Maryland seafood. Click to view larger." alt="Maryland seafood. Click to view larger." src="../img/seafood.jpg" onclick="popup(this.src)">
+        <img title="Maryland restaurant. Click to view larger." alt="Maryland restaurant. Click to view larger." src="../img/rut-700x467.jpg" onclick="popup(this.src)">
     </div>
     <div class="side-by-side">
-        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Map_of_USA_MD.svg/2000px-Map_of_USA_MD.svg.png"><img title="Maryland-US map. Click to view larger." alt="Maryland-US map. Click to view larger." src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Map_of_USA_MD.svg/2000px-Map_of_USA_MD.svg.png"></a>
-        <a href="http://www.worldmapsonline.com/images/academia-state-maps/md-physical_lg.jpg"><img title="Maryland state map. Click to view larger." alt="Maryland state map. Click to view larger." src="http://www.worldmapsonline.com/images/academia-state-maps/md-physical_lg.jpg"></a>
-        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg/1280px-Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg"><img title="Maryland state park. Click to view larger." alt="Maryland state park. Click to view larger." src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg/1280px-Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg"></a>
+        <img title="Maryland-US map. Click to view larger." alt="Maryland-US map. Click to view larger." src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Map_of_USA_MD.svg/2000px-Map_of_USA_MD.svg.png" onclick="popup(this.src)">
+        <img title="Maryland state map. Click to view larger." alt="Maryland state map. Click to view larger." src="http://www.worldmapsonline.com/images/academia-state-maps/md-physical_lg.jpg" onclick="popup(this.src)">
+        <img title="Maryland state park. Click to view larger." alt="Maryland state park. Click to view larger." src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg/1280px-Cedarville_State_Forest_Pond_in_Waldorf,_Maryland.jpg" onclick="popup(this.src)">
     </div>
 </div>
+
+<div id="popup"></div>
 
 <footer>
     <p>Alexis Fisher and Joseph Hansen, &copy; 2017</p>
