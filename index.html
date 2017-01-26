@@ -22,7 +22,8 @@
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         var modal = document.getElementById("popup");
-        if (event.target == modal) {
+        var modalImg = document.querySelector("#popup img");
+        if (event.target == modal || event.target == modalImg) {
             modal.style.display = "none";
         }
     }
